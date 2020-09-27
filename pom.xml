@@ -10,13 +10,14 @@
     <name>Sample Serenity BDD project using JUnit</name>
 
     <properties>
-        <serenity.version>2.2.8</serenity.version>
+        <serenity.version>2.3.5-SNAPSHOT</serenity.version>
         <serenity.maven.version>2.2.8</serenity.maven.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <encoding>UTF-8</encoding>
         <tags></tags>
         <parallel.tests>4</parallel.tests>
         <webdriver.base.url></webdriver.base.url>
+        <junit.version>4.13</junit.version>
     </properties>
     <dependencies>
         <dependency>
@@ -28,6 +29,12 @@
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-junit</artifactId>
+            <version>${serenity.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-junit5</artifactId>
             <version>${serenity.version}</version>
             <scope>test</scope>
         </dependency>
@@ -83,6 +90,7 @@
                     </includes>
                     <systemPropertyVariables>
                         <webdriver.base.url>${webdriver.base.url}</webdriver.base.url>
+                        <junit.jupiter.extensions.autodetection.enabled>true</junit.jupiter.extensions.autodetection.enabled>
                     </systemPropertyVariables>
                     <parallel>classes</parallel>
                     <threadCount>${parallel.tests}</threadCount>
