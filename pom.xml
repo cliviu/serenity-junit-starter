@@ -15,7 +15,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <encoding>UTF-8</encoding>
         <tags></tags>
-        <parallel.tests>4</parallel.tests>
+        <parallel.tests>0</parallel.tests>
         <webdriver.base.url></webdriver.base.url>
         <junit.version>4.13</junit.version>
     </properties>
