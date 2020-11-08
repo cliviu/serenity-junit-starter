@@ -30,6 +30,7 @@ public class SampleNonWebSteps {
 
     @Step
     public void stepThatSucceeds() {
+        stepWithAParameter(String.valueOf(System.currentTimeMillis()));
     }
 
     @Step

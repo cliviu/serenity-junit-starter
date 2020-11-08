@@ -1,6 +1,7 @@
-package starter.junit5;
+package starter.examples;
 
 import net.serenitybdd.junit5.StepsInjectorTestInstancePostProcessor;
+import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
 import starter.steps.SampleNonWebSteps;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -14,7 +15,7 @@ public class SimpleDataDrivenTest {
     @Steps
     public SampleNonWebSteps steps;
 
-    @ParameterizedTest(name = "run #{index} with [{arguments}]")
+    @ParameterizedTest(name = "run {index} with {arguments}")
     @ValueSource(strings = { "Hello", "JUnit" })
     public void withValueSource(String word) {
         steps.stepThatSucceeds();
@@ -22,10 +23,18 @@ public class SimpleDataDrivenTest {
         assertNotNull(word);
     }
 
-    @ParameterizedTest
+    @ParameterizedTest(name= "test with integers {index}")
     @ValueSource(ints = { 1,2 })
     public void withValueSourceIntegers(int number) {
         steps.stepThatSucceeds();
         steps.anotherStepThatSucceeds();
+    }
+
+    static public class ExampleSteps {
+
+        @Step("Page should contain [{0}] element(s)")
+        public void pageShouldContainElements(Object value, Object name) {
+
+        }
     }
 }
