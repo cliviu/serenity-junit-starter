@@ -1,5 +1,6 @@
 package starter.junit5;
 
+import net.thucydides.core.annotations.Manual;
 import net.thucydides.core.annotations.Steps;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -18,6 +19,7 @@ public class SecondTest {
 
     @Test
     @DisplayName("My 2nd JUnit 5 test! 😎")
+    @Manual
     void mySecondTest(TestInfo testInfo) {
         Calculator calculator = new Calculator();
         assertEquals(2, calculator.add(1, 1), "1 + 1 should equal 2");

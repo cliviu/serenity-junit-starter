@@ -3,6 +3,8 @@ package starter.examples;
 import net.serenitybdd.junit5.StepsInjectorTestInstancePostProcessor;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
+import org.junit.jupiter.params.provider.EnumSource;
+import starter.domain.Books;
 import starter.steps.SampleNonWebSteps;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -30,11 +32,8 @@ public class SimpleDataDrivenTest {
         steps.anotherStepThatSucceeds();
     }
 
-    static public class ExampleSteps {
 
-        @Step("Page should contain [{0}] element(s)")
-        public void pageShouldContainElements(Object value, Object name) {
 
-        }
-    }
+
+
 }
