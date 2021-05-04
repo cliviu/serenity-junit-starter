@@ -11,7 +11,7 @@
 
     <properties>
         <serenity.version>2.3.5-SNAPSHOT</serenity.version>
-        <serenity.maven.version>2.2.8</serenity.maven.version>
+        <serenity.maven.version>2.3.33</serenity.maven.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <encoding>UTF-8</encoding>
         <tags></tags>
@@ -124,6 +124,13 @@
                 <configuration>
                   <tags>${tags}</tags>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>net.serenity-bdd</groupId>
+                        <artifactId>serenity-core</artifactId>
+                        <version>${serenity.version}</version>
+                    </dependency>
+                </dependencies>
                 <executions>
                     <execution>
                         <id>serenity-reports</id>

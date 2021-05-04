@@ -8,8 +8,9 @@
     </appender>
 
     <logger name="root" level="DEBUG"/>
-    <logger name="net.serenitybdd" level="INFO"/>
-    <logger name="net.thucydides" level="INFO"/>
+    <logger name="net.serenitybdd" level="TRACE"/>
+    <logger name="net.serenitybdd.junit5" level="TRACE"/>
+    <logger name="net.thucydides" level="TRACE"/>
 
     <root level="DEBUG">
         <appender-ref ref="STDOUT"/>

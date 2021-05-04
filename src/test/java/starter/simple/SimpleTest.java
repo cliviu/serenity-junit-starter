@@ -2,6 +2,7 @@ package starter.simple;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -16,6 +17,7 @@ public class SimpleTest {
 
 
     @Test
+    @Tag("mytype:myTagName")
     public void testMethod1() {
         steps.stepThatSucceeds();
         steps.anotherStepThatSucceeds();

@@ -20,10 +20,11 @@ public class SecondTest {
     @Test
     @DisplayName("My 2nd JUnit 5 test! 😎")
     @Manual
-    void mySecondTest(TestInfo testInfo) {
+    @Tag("mysecondTag")
+    void mySecondTest(/*TestInfo testInfo*/) {
         Calculator calculator = new Calculator();
         assertEquals(2, calculator.add(1, 1), "1 + 1 should equal 2");
-        assertEquals("My 2nd JUnit 5 test! 😎", testInfo.getDisplayName(), () -> "TestInfo is injected correctly");
+        //assertEquals("My 2nd JUnit 5 test! 😎", testInfo.getDisplayName(), () -> "TestInfo is injected correctly");
 
         // Given
         michael.startsWith(1);
