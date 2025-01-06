@@ -1,24 +1,26 @@
 package starter.acceptancetests;
 
-import net.serenitybdd.junit5.SerenityJUnit5Extension;
+
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.annotations.CastMember;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.questions.page.TheWebPage;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import net.serenitybdd.testng.SerenityTestNG;
+
+import org.testng.annotations.Ignore;
+import org.testng.annotations.Test;
 import starter.actions.navigation.NavigateTo;
 import starter.actions.search.LookForInformation;
 
-@ExtendWith(SerenityJUnit5Extension.class)
-class WhenSearchingForTerms {
+
+
+@SerenityTestNG
+public class WhenSearchingForTerms {
 
     @CastMember
     Actor actor;
 
-    @Test
-    @DisplayName("Should be able to search for red things")
+    @Test(testName = "Should be able to search for red things", groups = {"redGroup","yellowGroup"})
     void searchForRedThings() {
         actor.attemptsTo(
                 NavigateTo.theSearchHomePage(),
@@ -27,8 +29,8 @@ class WhenSearchingForTerms {
         );
     }
 
-    @Test
-    @DisplayName("Should be able to search for green things")
+
+    @Test(testName = "Should be able to search for green things",groups = {"greenGroup"})
     void searchForGreenThings() {
         actor.attemptsTo(
                 NavigateTo.theSearchHomePage(),

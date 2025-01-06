@@ -10,7 +10,8 @@
     <name>Sample Serenity BDD project using JUnit 5</name>
 
     <properties>
-        <serenity.version>4.1.6</serenity.version>
+        <serenity.version>4.2.10-SNAPSHOT</serenity.version>
+
         <junit5.version>5.10.1</junit5.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <encoding>UTF-8</encoding>
@@ -24,9 +25,15 @@
             <version>${serenity.version}</version>
             <scope>test</scope>
         </dependency>
+         <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-model</artifactId>
+            <version>${serenity.version}</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-junit5</artifactId>
+            <artifactId>serenity-testng</artifactId>
             <version>${serenity.version}</version>
             <scope>test</scope>
         </dependency>
@@ -48,24 +55,24 @@
             <version>${serenity.version}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>1.2.11</version>
-        </dependency>
-        <!-- JUNIT 5 DEPENDENCY-->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit5.version}</version>
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+       <!-- <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>2.0.16</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit5.version}</version>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.1.0-alpha1</version>
             <scope>test</scope>
-        </dependency>
+        </dependency> -->
+ <dependency>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-classic</artifactId>
+    <version>1.5.6</version>
+</dependency>
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
@@ -95,7 +102,6 @@
                     </includes>
                     <systemPropertyVariables>
                         <webdriver.base.url>${webdriver.base.url}</webdriver.base.url>
-                        <junit.jupiter.extensions.autodetection.enabled>true</junit.jupiter.extensions.autodetection.enabled>
                     </systemPropertyVariables>
                 </configuration>
                 <executions>
